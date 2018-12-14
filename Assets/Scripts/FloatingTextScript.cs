@@ -9,7 +9,6 @@ public class FloatingTextScript : MonoBehaviour {
 
 	void Start () {
 		Transform x = transform.Find("Face 1").Find("Text");
-		Debug.Log(x);
 		Text textComponent = x.GetComponent<Text>();
 		textComponent.text = text;
 	}
