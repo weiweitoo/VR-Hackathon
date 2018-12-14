@@ -7,7 +7,10 @@ public class RotateAroundPlayerScript : MonoBehaviour {
 	public GameObject centerPoint;
 	public float rotationSpeed = 20.0f;
 
-	void FixedUpdate() {
-		transform.RotateAround(centerPoint.transform.position, transform.up, rotationSpeed*Time.deltaTime);
+	void Update() {
+		if (Input.GetButtonDown("Fire1"))
+       	{
+			Debug.Log("123213");
+		}
 	}
 }
