@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using CLOVR_Plugin;
 
+[System.Serializable]
 public class Grab : MonoBehaviour {
 
     public GameObject cameraPivot;
@@ -15,10 +16,28 @@ public class Grab : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (hold)
-            Throw();
-        else
-            Pick();
+        // if (hold)
+        //     Throw();
+        // else
+        //     Pick();
+        CallEvent();
+    }
+
+    private void CallEvent(){
+        if (Input.GetButtonDown("Fire1"))
+        {
+            var hit = CLOVRRaycast.Cast(new Vector2(Screen.width / 2.0f, Screen.height / 2.0f));
+            if (hit.collider != null)
+            {
+                if (hit.collider.gameObject.tag == "EventTrigger")
+                {
+                    Debug.Log("Get it");
+                    var x = hit.collider.gameObject.transform;
+                    var eventObj = x.GetComponent<Event>();
+                    eventObj.run();
+                }
+            }
+        }
     }
 
     private void Pick()

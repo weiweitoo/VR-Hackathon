@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "261011583547",
+    "firebase_url": "https://vrhackathon-6262f.firebaseio.com",
+    "project_id": "vrhackathon-6262f",
+    "storage_bucket": "vrhackathon-6262f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:261011583547:android:3c8e47fb81bf7b2a",
+        "android_client_info": {
+          "package_name": "com.company.vrhackathon"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "261011583547-9qi8srb3t29t4dft4jd9luc9u164mgr9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCx2cEK4RWPupvZeIz3omxvQcRV_Fqclac"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

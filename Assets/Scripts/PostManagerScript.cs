@@ -9,9 +9,9 @@ public class PostManagerScript : MonoBehaviour {
 
 	void Start () {
 		FloatingTextScript floatingTextScript;
-		for (int y = 0; y < 1; y++) 
+		for (int y = 0; y < 3; y++) 
 		{
-            GameObject textObj = Instantiate(postPrefab, new Vector3(0, 1, 0), Quaternion.identity);
+            GameObject textObj = Instantiate(postPrefab, new Vector3(2, (y + 1) * 4, 2), Quaternion.identity);
 			floatingTextScript = textObj.GetComponent<FloatingTextScript>();
 			floatingTextScript.text = "12dede3";
 			Debug.Log(textObj);
