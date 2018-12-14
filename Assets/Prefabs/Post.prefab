@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 54737548692377236}
   - component: {fileID: 114854232670182888}
   - component: {fileID: 114261950157300130}
-  - component: {fileID: 114160605362630082}
+  - component: {fileID: 114952738933319916}
   m_Layer: 0
   m_Name: Post
   m_TagString: Untagged
@@ -114,19 +114,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114160605362630082
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1120136714667430}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b5391646e0e7b45b3ac4d3b70a99b0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  centerPoint: {fileID: 0}
-  rotationSpeed: 10
 --- !u!114 &114261950157300130
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -139,6 +126,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   centerPoint: {fileID: 0}
+  alwaysEnable: 0
 --- !u!114 &114355496830679564
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -202,6 +190,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: heheheheh hahaha
+--- !u!114 &114952738933319916
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1120136714667430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf835f75e4b735c47bc709c7300e97f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  centerPoint: {fileID: 0}
+  scrollingSpeed: 20
 --- !u!222 &222838234481489100
 CanvasRenderer:
   m_ObjectHideFlags: 1
