@@ -9,10 +9,7 @@ public class Grab : MonoBehaviour {
     public GameObject cameraPivot;
     bool hold;
     GameObject holdObject;
-    // Use this for initialization
-    void Start () {
-		
-	}
+    SocketEventInterface socketEvent;
 	
 	// Update is called once per frame
 	void Update () {
@@ -20,21 +17,45 @@ public class Grab : MonoBehaviour {
         //     Throw();
         // else
         //     Pick();
-        CallEvent();
+        TurnOnMachine();
+        TurnOffMachine();
+        GetDataMachine();
     }
 
-    private void CallEvent(){
-        if (Input.GetButtonDown("Fire1"))
-        {
+    private void TurnOnMachine(){
+        if (Input.GetButtonDown("Fire1")){
             var hit = CLOVRRaycast.Cast(new Vector2(Screen.width / 2.0f, Screen.height / 2.0f));
-            if (hit.collider != null)
-            {
-                if (hit.collider.gameObject.tag == "EventTrigger")
-                {
-                    Debug.Log("Get it");
-                    var x = hit.collider.gameObject.transform;
-                    var eventObj = x.GetComponent<Event>();
-                    eventObj.run();
+            if (hit.collider != null){
+                if (hit.collider.gameObject.tag == "EventTrigger"){
+                    // TODO play sound
+                    socketEvent = hit.collider.gameObject.transform.Find("Machine").Find("Socket").GetComponent<SocketEventInterface>();
+                    socketEvent.TurnOn();
+                }
+            }
+        }
+    }
+
+    private void TurnOffMachine(){
+        if (Input.GetButtonDown("Fire2")){
+            var hit = CLOVRRaycast.Cast(new Vector2(Screen.width / 2.0f, Screen.height / 2.0f));
+            if (hit.collider != null){
+                if (hit.collider.gameObject.tag == "EventTrigger"){
+                    // TODO play sound
+                    socketEvent = hit.collider.gameObject.transform.Find("Machine").Find("Socket").GetComponent<SocketEventInterface>();
+                    socketEvent.TurnOff();
+                }
+            }
+        }
+    }
+
+    private void GetDataMachine(){
+        if (Input.GetButtonDown("Fire3")){
+            var hit = CLOVRRaycast.Cast(new Vector2(Screen.width / 2.0f, Screen.height / 2.0f));
+            if (hit.collider != null) {
+                if (hit.collider.gameObject.tag == "EventTrigger"){
+                    // TODO play sound
+                    socketEvent = hit.collider.gameObject.transform.Find("Machine").Find("Socket").GetComponent<SocketEventInterface>();
+                    socketEvent.GetData();
                 }
             }
         }

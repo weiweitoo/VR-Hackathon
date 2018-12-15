@@ -41,7 +41,6 @@ GameObject:
   - component: {fileID: 54979197157242660}
   - component: {fileID: 114917274326530620}
   - component: {fileID: 114796339192029974}
-  - component: {fileID: 114182718831462800}
   m_Layer: 0
   m_Name: FloatingText
   m_TagString: Untagged
@@ -73,8 +72,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1201001048700122}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.377, y: 2.68, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 0.1}
+  m_LocalPosition: {x: -78.46601, y: -0.119999886, z: -69.965294}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 224576862103932628}
   m_Father: {fileID: 0}
@@ -100,7 +99,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!65 &65136582214475718
 BoxCollider:
@@ -114,19 +113,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114182718831462800
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1201001048700122}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b5391646e0e7b45b3ac4d3b70a99b0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  centerPoint: {fileID: 0}
-  rotationSpeed: 10
 --- !u!114 &114244760492305564
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -155,7 +141,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0.85882354, b: 0.8509804, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -163,11 +149,11 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: ee87b6dabb599284ea3b4b2d906915f7, type: 3}
-    m_FontSize: 14
+    m_Font: {fileID: 12800000, guid: 5170ea17948126342b29be3fe2fc7892, type: 3}
+    m_FontSize: 24
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 1
     m_MaxSize: 40
     m_Alignment: 0
     m_AlignByGeometry: 0
@@ -175,9 +161,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'This is a very long test!!
-
-    ahahahaha'
+  m_Text: Machine 2
 --- !u!114 &114796339192029974
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -190,6 +174,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   centerPoint: {fileID: 0}
+  alwaysEnable: 1
 --- !u!114 &114917274326530620
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -201,7 +186,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77fb10b678f76d6408cdf4381c03cb26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: heheheheh hahaha
+  text: Machine 2
 --- !u!222 &222567520965573434
 CanvasRenderer:
   m_ObjectHideFlags: 1
