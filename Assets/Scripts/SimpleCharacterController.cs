@@ -8,6 +8,7 @@ public class SimpleCharacterController : MonoBehaviour {
     public float runSpeed = 4;
     public float gravity = 9.8f;
     public float lookSpeed = 45;
+    public float flySpeed = 2;
     public bool invertY = true;
     public Transform cameraPivot;
 
@@ -51,21 +52,55 @@ public class SimpleCharacterController : MonoBehaviour {
 
     void UpdateTranslation()
     {
-        if (controller.isGrounded)
-        {
-            var x = Input.GetAxis("Horizontal");
-            var z = Input.GetAxis("Vertical");
-            var run = Input.GetKey(KeyCode.LeftShift);
+        var x = Input.GetAxis("Horizontal");
+        var z = Input.GetAxis("Vertical");
+        var run = Input.GetKey(KeyCode.LeftShift);
+        var fly = Input.GetButton("Jump");
+        var down = Input.GetButton("Down");
+        var y = 0f;
 
-            var translation = new Vector3(x, 0, z);
-            speed = run ? runSpeed : walkSpeed;
-            movement = cameraPivot.transform.TransformDirection(translation * speed);
+        if(fly == down){
+            y = 0f;
         }
-        else
-        {
-            movement.y -= gravity * Time.deltaTime;
+        else if(fly){
+            y = flySpeed;
         }
+        else if(down){
+            y = -flySpeed;
+        }
+        Debug.Log(y);
+        var translation = new Vector3(x, y, z);
+        speed = run ? runSpeed : walkSpeed;
+        movement = cameraPivot.transform.TransformDirection(translation * speed);
+
+        //Apply Gravity
+        // movement.y -= gravity * Time.deltaTime;
+
+        // if(movement.y < 0){
+        //     movement.y = 0;
+        // }
+
         finalMovement = Vector3.Lerp(finalMovement, movement, Time.deltaTime * 25);
         controller.Move(finalMovement * Time.deltaTime);
     }
+
+    // void UpdateTranslation()
+    // {
+    //     if (controller.isGrounded)
+    //     {
+    //         var x = Input.GetAxis("Horizontal");
+    //         var z = Input.GetAxis("Vertical");
+    //         var run = Input.GetKey(KeyCode.LeftShift);
+
+    //         var translation = new Vector3(x, 0, z);
+    //         speed = run ? runSpeed : walkSpeed;
+    //         movement = cameraPivot.transform.TransformDirection(translation * speed);
+    //     }
+    //     else
+    //     {
+    //         movement.y -= gravity * Time.deltaTime;
+    //     }
+    //     finalMovement = Vector3.Lerp(finalMovement, movement, Time.deltaTime * 25);
+    //     controller.Move(finalMovement * Time.deltaTime);
+    // }
 }

@@ -22,7 +22,7 @@ public class Machine1SocketScript : MonoBehaviour,SocketEventInterface {
 
 	public void TurnOn(){
 		Debug.Log("TurnOn1");
-		socket.Emit("turnon1");
+		socket.Emit("turnon1");	
 	}
 
 	public void TurnOff(){
