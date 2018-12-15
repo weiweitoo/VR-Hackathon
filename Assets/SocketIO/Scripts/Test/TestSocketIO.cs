@@ -39,12 +39,12 @@ public class TestSocketIO : MonoBehaviour
 		GameObject go = GameObject.Find("SocketIO");
 		socket = go.GetComponent<SocketIOComponent>();
 
-		socket.On("open", TestOpen);
-		socket.On("boop", TestBoop);
-		socket.On("error", TestError);
-		socket.On("close", TestClose);
+		//socket.On("open", TestOpen);
+		socket.On("pong", TestBoop);
+		//socket.On("error", TestError);
+		//socket.On("close", TestClose);
 		
-		StartCoroutine("BeepBoop");
+		//StartCoroutine("BeepBoop");
 	}
 
 	private IEnumerator BeepBoop()
@@ -52,23 +52,23 @@ public class TestSocketIO : MonoBehaviour
 		// wait 1 seconds and continue
 		yield return new WaitForSeconds(1);
 		
-		socket.Emit("beep");
+		socket.Emit("ping");
 		
 		// wait 3 seconds and continue
 		yield return new WaitForSeconds(3);
 		
-		socket.Emit("beep");
+		socket.Emit("ping");
 		
 		// wait 2 seconds and continue
 		yield return new WaitForSeconds(2);
 		
-		socket.Emit("beep");
+		socket.Emit("ping");
 		
 		// wait ONE FRAME and continue
 		yield return null;
 		
-		socket.Emit("beep");
-		socket.Emit("beep");
+		socket.Emit("ping");
+		socket.Emit("ping");
 	}
 
 	public void TestOpen(SocketIOEvent e)
@@ -78,7 +78,7 @@ public class TestSocketIO : MonoBehaviour
 	
 	public void TestBoop(SocketIOEvent e)
 	{
-		Debug.Log("[SocketIO] Boop received: " + e.name + " " + e.data);
+		Debug.Log("[SocketIO] Pong received: " + e.name + " " + e.data);
 
 		if (e.data == null) { return; }
 
@@ -91,7 +91,7 @@ public class TestSocketIO : MonoBehaviour
 	
 	public void TestError(SocketIOEvent e)
 	{
-		Debug.Log("[SocketIO] Error received: " + e.name + " " + e.data);
+		Debug.Log("Not working!!!");
 	}
 	
 	public void TestClose(SocketIOEvent e)
