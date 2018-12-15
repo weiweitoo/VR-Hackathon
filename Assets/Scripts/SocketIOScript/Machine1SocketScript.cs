@@ -16,20 +16,25 @@ public class Machine1SocketScript : MonoBehaviour,SocketEventInterface {
 			socket.On("open", TestOpen);
 			socket.On("error", TestError);
 			socket.On("close", TestClose);
+			socket.On("getdata1",TestGetData);
 		}
 	}
 
 	public void TurnOn(){
-		socket.Emit("turnon2");
+		socket.Emit("turnon1");
 	}
 
 	public void TurnOff(){
-		socket.Emit("turnoff2");
+		socket.Emit("turnoff1");
 	}
 
 	public void GetData(){
-		socket.Emit("getdata2");
+		socket.Emit("getdata1");
 	}
+
+	 public void TestGetData(SocketIOEvent e){
+	 	Debug.Log(e.data);
+	 }
 
 	public void TestOpen(SocketIOEvent e)
 	{
