@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using SocketIO;
 
-public class Machine2SocketScript : MonoBehaviour {
+public class Machine2SocketScript : MonoBehaviour,SocketEventInterface {
 	private SocketIOComponent socket;
 	public bool enable = false;
 
