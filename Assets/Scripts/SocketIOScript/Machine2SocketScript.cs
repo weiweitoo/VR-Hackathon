@@ -20,15 +20,18 @@ public class Machine2SocketScript : MonoBehaviour,SocketEventInterface {
 		}
 	}
 
-	public void TurnOn(){
+	public void TurnOn(){		
+		Debug.Log("TurnOn2");
 		socket.Emit("turnon2");
 	}
 
-	public void TurnOff(){
+	public void TurnOff(){		
+		Debug.Log("TurnOff2");
 		socket.Emit("turnoff2");
 	}
 
-	public void GetData(){
+	public void GetData(){		
+		Debug.Log("GetData2");
 		socket.Emit("getdata2");
 	}
 
