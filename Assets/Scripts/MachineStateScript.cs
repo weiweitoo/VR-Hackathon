@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Networking;
 
 public class MachineStateScript : MonoBehaviour {
 
@@ -11,6 +12,7 @@ public class MachineStateScript : MonoBehaviour {
 	public float pressure;
 
 	public int updateRate = 3;
+	public string url = "http://172.30.93.138:4567/getdata";
 
 	SocketEventInterface socketComponent;
 	Text textComponent;
@@ -24,18 +26,45 @@ public class MachineStateScript : MonoBehaviour {
 	}
 
 	IEnumerator CallGetData(){
-		// socketComponent.GetData();
-		// Debug.Log("Request Latest Data");
-		// Assign Data
-		textComponent = transform.Find("Wrapper").Find("Online").Find("Face 1").Find("Text").GetComponent<Text>();
-		textComponent.text = "Online!";
-		if("Online" == "Online"){
-			textComponent = transform.Find("Wrapper").Find("Temperature").Find("Face 1").Find("Text").GetComponent<Text>();
-			textComponent.text = "Temperature: " + 30;
-			textComponent = transform.Find("Wrapper").Find("Pressure").Find("Face 1").Find("Text").GetComponent<Text>();
-			textComponent.text = "Pressure: " + 40;
-			textComponent = transform.Find("Wrapper").Find("Humidity").Find("Face 1").Find("Text").GetComponent<Text>();
-			textComponent.text = "Humidity: " + 30;
+		// Get data
+		using (UnityWebRequest www = UnityWebRequest.Get(url))
+		{
+		    yield return www.Send();
+
+		    if (www.isNetworkError || www.isHttpError)
+		    {
+		        Debug.Log(www.error);
+		    }
+		    else
+		    {
+		        // Show results as text
+		        var response = www.downloadHandler.text;
+		        Debug.Log(response);
+		        MachineData machineData = MachineData.CreateFromJSON(response);
+		        Debug.Log(machineData.temp);
+		        
+		        // Or retrieve results as binary data
+		        // byte[] results = www.downloadHandler.data;
+
+		        var wrapper = transform.Find("Wrapper");
+		        textComponent = wrapper.Find("Online").Find("Face 1").Find("Text").GetComponent<Text>();
+		        if(machineData.online == true){
+		        	// Assign Data
+		        	textComponent.text = "Online";
+	        		textComponent = wrapper.Find("Temperature").Find("Face 1").Find("Text").GetComponent<Text>();
+	        		textComponent.text = "Temperature: " + machineData.temp + "`C";
+	        		textComponent = wrapper.Find("Pressure").Find("Face 1").Find("Text").GetComponent<Text>();
+	        		textComponent.text = "Pressure: " + machineData.atm + " hPa";
+	        		textComponent = wrapper.Find("Humidity").Find("Face 1").Find("Text").GetComponent<Text>();
+	        		textComponent.text = "Humidity: " + machineData.humility + " w";
+	        		textComponent = wrapper.Find("Enegry").Find("Face 1").Find("Text").GetComponent<Text>();
+	        		textComponent.text = "Produce Enegry: " + machineData.magic + " kW/h";
+		        }
+		        else{
+		        	textComponent.text = "Offline";
+		        }
+		        
+		    }
 		}
 
 		yield return new WaitForSeconds(updateRate);

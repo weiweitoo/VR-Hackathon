@@ -13,9 +13,9 @@ public class Machine2SocketScript : MonoBehaviour,SocketEventInterface {
 			GameObject go = GameObject.Find("SocketIO");
 			socket = go.GetComponent<SocketIOComponent>();
 
-			//socket.On("open", TestOpen);
-			//socket.On("error", TestError);
-			//socket.On("close", TestClose);
+			socket.On("open", TestOpen);
+			socket.On("error", TestError);
+			socket.On("close", TestClose);
 			socket.On("getdata2",TestData);
 		}
 	}
