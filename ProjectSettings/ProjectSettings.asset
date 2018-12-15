@@ -649,7 +649,7 @@ PlayerSettings:
   cloudServicesEnabled:
     UNet: 1
   facebookSdkVersion: 7.9.4
-  apiCompatibilityLevel: 2
+  apiCompatibilityLevel: 3
   cloudProjectId: 3a27cf32-3ebe-4fc0-9cb2-422fc9ea2571
   projectName: VRHackathon
   organizationId: weiweitoo98
