@@ -38,7 +38,7 @@ public class MachineStateScript : MonoBehaviour {
 			        // Show results as text
 			        var response = www.downloadHandler.text;
 			        MachineData machineData = MachineData.CreateFromJSON(response);
-			        
+			 		Debug.Log(response);       
 			        // Or retrieve results as binary data
 			        // byte[] results = www.downloadHandler.data;
 
@@ -63,7 +63,11 @@ public class MachineStateScript : MonoBehaviour {
 			        	textComponent.text = "Online";
 			        }
 			        else{
+			        	Debug.Log("Dead");
 			        	textComponent.text = "Device Offline";
+			        	// Show notification
+			        	var notificationManager = GameObject.Find("NotificationManager").GetComponent<NotificationManager>();
+			        	notificationManager.ShowNotication();
 			        }
 			    }
 			}
