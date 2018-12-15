@@ -17,7 +17,7 @@ public class LookAtCenterScript : MonoBehaviour {
 	public void LookAt(){
 		// Solve the bug here wtf
 		// transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(centerPoint.transform.position), rotationSpeed * Time.deltaTime);
-		transform.LookAt(centerPoint.transform);
+		// transform.LookAt(centerPoint.transform);
 		// Debug.Log(centerPoint.transform.position);
 	}
 

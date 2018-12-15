@@ -13,10 +13,10 @@ public class Machine1SocketScript : MonoBehaviour,SocketEventInterface {
 			GameObject go = GameObject.Find("SocketIO");
 			socket = go.GetComponent<SocketIOComponent>();
 
-			socket.On("open", TestOpen);
-			socket.On("error", TestError);
-			socket.On("close", TestClose);
-			socket.On("getdata1",TestGetData);
+			//socket.On("open", TestOpen);
+			//socket.On("error", TestError);
+			//socket.On("close", TestClose);
+			socket.On("getdata",TestData);
 		}
 	}
 
@@ -32,8 +32,8 @@ public class Machine1SocketScript : MonoBehaviour,SocketEventInterface {
 		socket.Emit("getdata1");
 	}
 
-	 public void TestGetData(SocketIOEvent e){
-	 	Debug.Log(e.data);
+	 public void TestData(SocketIOEvent e){
+	 	Debug.Log("[SocketIO] Data received: " + e.name + " " + e.data);
 	 }
 
 	public void TestOpen(SocketIOEvent e)
