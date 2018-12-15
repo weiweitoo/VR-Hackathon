@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class StartGameUIEventScript : MonoBehaviour,UIEventInterface {
+public class StartMenuHandler : MonoBehaviour {
 
-	public void Run(){
+	public void LoadGameScene(){
 		SceneManager.LoadScene("outpost with snow");
 	}
-
 }
