@@ -3,7 +3,7 @@
 [System.Serializable]
 public class MachineData
 {
-	public bool online;
+	public bool ping;
     public float temp;
     public float atm;
     public float humility;

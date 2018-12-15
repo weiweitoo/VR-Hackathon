@@ -18,8 +18,7 @@ public class Grab : MonoBehaviour {
         // else
         //     Pick();
         TurnOnMachine();
-        TurnOffMachine();
-        GetDataMachine();
+
     }
 
     private void TurnOnMachine(){
@@ -35,31 +34,6 @@ public class Grab : MonoBehaviour {
         }
     }
 
-    private void TurnOffMachine(){
-        if (Input.GetButtonDown("Fire2")){
-            var hit = CLOVRRaycast.Cast(new Vector2(Screen.width / 2.0f, Screen.height / 2.0f));
-            if (hit.collider != null){
-                if (hit.collider.gameObject.tag == "EventTrigger"){
-                    // TODO play sound
-                    socketEvent = hit.collider.gameObject.transform.Find("Machine").Find("Socket").GetComponent<SocketEventInterface>();
-                    socketEvent.TurnOff();
-                }
-            }
-        }
-    }
-
-    private void GetDataMachine(){
-        if (Input.GetButtonDown("Fire3")){
-            var hit = CLOVRRaycast.Cast(new Vector2(Screen.width / 2.0f, Screen.height / 2.0f));
-            if (hit.collider != null) {
-                if (hit.collider.gameObject.tag == "EventTrigger"){
-                    // TODO play sound
-                    socketEvent = hit.collider.gameObject.transform.Find("Machine").Find("Socket").GetComponent<SocketEventInterface>();
-                    socketEvent.GetData();
-                }
-            }
-        }
-    }
 
     private void Pick()
     {

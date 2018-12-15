@@ -16,23 +16,12 @@ public class Machine2SocketScript : MonoBehaviour,SocketEventInterface {
 			socket.On("open", TestOpen);
 			socket.On("error", TestError);
 			socket.On("close", TestClose);
-			socket.On("getdata2",TestData);
 		}
 	}
 
 	public void TurnOn(){		
-		Debug.Log("TurnOn2");
-		socket.Emit("turnon2");
-	}
-
-	public void TurnOff(){		
-		Debug.Log("TurnOff2");
-		socket.Emit("turnoff2");
-	}
-
-	public void GetData(){		
-		Debug.Log("GetData2");
-		socket.Emit("getdata2");
+		// Debug.Log("TurnOn2");
+		// socket.Emit("turnon2");
 	}
 
 	public void TestData(SocketIOEvent e){

@@ -19,54 +19,53 @@ public class MachineStateScript : MonoBehaviour {
 
 	void Start () {
 		socketComponent = transform.Find("Machine").Find("Socket").GetComponent<SocketEventInterface>();
-	}
-	
-	void Update () {
 		StartCoroutine("CallGetData");
 	}
 
 	IEnumerator CallGetData(){
 		// Get data
-		using (UnityWebRequest www = UnityWebRequest.Get(url))
-		{
-		    yield return www.Send();
+		while(true){
+			using (UnityWebRequest www = UnityWebRequest.Get(url))
+			{
+			    yield return www.Send();
 
-		    if (www.isNetworkError || www.isHttpError)
-		    {
-		        Debug.Log(www.error);
-		    }
-		    else
-		    {
-		        // Show results as text
-		        var response = www.downloadHandler.text;
-		        Debug.Log(response);
-		        MachineData machineData = MachineData.CreateFromJSON(response);
-		        Debug.Log(machineData.temp);
-		        
-		        // Or retrieve results as binary data
-		        // byte[] results = www.downloadHandler.data;
+			    if (www.isNetworkError || www.isHttpError)
+			    {
+			        Debug.Log(www.error);
+			    }
+			    else
+			    {
+			        // Show results as text
+			        var response = www.downloadHandler.text;
+			        MachineData machineData = MachineData.CreateFromJSON(response);
+			        
+			        // Or retrieve results as binary data
+			        // byte[] results = www.downloadHandler.data;
 
-		        var wrapper = transform.Find("Wrapper");
-		        textComponent = wrapper.Find("Online").Find("Face 1").Find("Text").GetComponent<Text>();
-		        if(machineData.online == true){
-		        	// Assign Data
-		        	textComponent.text = "Online";
-	        		textComponent = wrapper.Find("Temperature").Find("Face 1").Find("Text").GetComponent<Text>();
-	        		textComponent.text = "Temperature: " + machineData.temp + "`C";
-	        		textComponent = wrapper.Find("Pressure").Find("Face 1").Find("Text").GetComponent<Text>();
-	        		textComponent.text = "Pressure: " + machineData.atm + " hPa";
-	        		textComponent = wrapper.Find("Humidity").Find("Face 1").Find("Text").GetComponent<Text>();
-	        		textComponent.text = "Humidity: " + machineData.humility + " w";
-	        		textComponent = wrapper.Find("Enegry").Find("Face 1").Find("Text").GetComponent<Text>();
-	        		textComponent.text = "Produce Enegry: " + machineData.magic + " kW/h";
-		        }
-		        else{
-		        	textComponent.text = "Offline";
-		        }
-		        
-		    }
+			        var wrapper = transform.Find("Wrapper");
+			        textComponent = wrapper.Find("Online").Find("Face 1").Find("Text").GetComponent<Text>();
+			        // Debug.Log(tra);
+			        if(machineData.ping == true){
+			        	// Assign Data
+			        	textComponent.text = "Online";
+		        		textComponent = wrapper.Find("Temperature").Find("Face 1").Find("Text").GetComponent<Text>();
+		        		textComponent.text = "Temperature: " + machineData.temp + "`C";
+		        		textComponent = wrapper.Find("Pressure").Find("Face 1").Find("Text").GetComponent<Text>();
+		        		textComponent.text = "Pressure: " + machineData.atm + " hPa";
+		        		textComponent = wrapper.Find("Humidity").Find("Face 1").Find("Text").GetComponent<Text>();
+		        		textComponent.text = "Humidity: " + machineData.humility + " w";
+		        		textComponent = wrapper.Find("Distance").Find("Face 1").Find("Text").GetComponent<Text>();
+		        		textComponent.text = "Distance: " + machineData.distance + " cm";
+		        		textComponent = wrapper.Find("Energy").Find("Face 1").Find("Text").GetComponent<Text>();
+		        		textComponent.text = "Produce Enegry: " + machineData.magic + " kW/h";
+			        }
+			        else{
+			        	textComponent.text = "Offline";
+			        }
+			    }
+			}
+
+			yield return new WaitForSeconds(updateRate);
 		}
-
-		yield return new WaitForSeconds(updateRate);
 	}
 }
