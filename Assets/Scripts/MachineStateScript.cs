@@ -44,8 +44,8 @@ public class MachineStateScript : MonoBehaviour {
 
 			        var wrapper = transform.Find("Wrapper");
 			        textComponent = wrapper.Find("Online").Find("Face 1").Find("Text").GetComponent<Text>();
-			        // Debug.Log(tra);
-			        if(machineData.ping == true){
+			        var currentMachine = transform.gameObject.name;
+			        if(currentMachine=="Machine1"){
 			        	// Assign Data
 			        	textComponent.text = "Online";
 		        		textComponent = wrapper.Find("Temperature").Find("Face 1").Find("Text").GetComponent<Text>();
@@ -59,8 +59,11 @@ public class MachineStateScript : MonoBehaviour {
 		        		textComponent = wrapper.Find("Energy").Find("Face 1").Find("Text").GetComponent<Text>();
 		        		textComponent.text = "Produce Enegry: " + machineData.magic + " kW/h";
 			        }
+			        else if(machineData.ping == true){
+			        	textComponent.text = "Online";
+			        }
 			        else{
-			        	textComponent.text = "Offline";
+			        	textComponent.text = "Device Offline";
 			        }
 			    }
 			}

@@ -10,6 +10,7 @@ public class Grab : MonoBehaviour {
     bool hold;
     GameObject holdObject;
     SocketEventInterface socketEvent;
+    UIEventInterface uiEvent;
 	
 	// Update is called once per frame
 	void Update () {
@@ -25,10 +26,15 @@ public class Grab : MonoBehaviour {
         if (Input.GetButtonDown("Fire1")){
             var hit = CLOVRRaycast.Cast(new Vector2(Screen.width / 2.0f, Screen.height / 2.0f));
             if (hit.collider != null){
+                Debug.Log(hit.collider.gameObject.name);
                 if (hit.collider.gameObject.tag == "EventTrigger"){
                     // TODO play sound
                     socketEvent = hit.collider.gameObject.transform.Find("Machine").Find("Socket").GetComponent<SocketEventInterface>();
                     socketEvent.TurnOn();
+                }
+                else if (hit.collider.gameObject.tag == "UITrigger"){
+                    uiEvent = hit.collider.gameObject.transform.Find("Event").GetComponent<UIEventInterface>();
+                    uiEvent.Run();
                 }
             }
         }
