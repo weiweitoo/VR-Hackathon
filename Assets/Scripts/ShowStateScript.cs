@@ -26,9 +26,9 @@ public class ShowStateScript : MonoBehaviour {
         {
             if (hit.collider.gameObject.tag == "EventTrigger")
             {
-                var targetObj = hit.collider.gameObject.transform;
-                var lighting = targetObj.Find("Selected").transform.GetComponent<Light>();
-                lighting.enabled = true;
+                // var targetObj = hit.collider.gameObject.transform;
+                // var lighting = targetObj.Find("Selected").transform.GetComponent<Light>();
+                // lighting.enabled = true;
                 // eventObj.run();
             }
         }
