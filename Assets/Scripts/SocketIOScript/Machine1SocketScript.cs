@@ -19,15 +19,22 @@ public class Machine1SocketScript : MonoBehaviour,SocketEventInterface {
 		}
 	}
 
-	public void action(){
-		socket.Emit("beepbeep1");
+	public void TurnOn(){
+		socket.Emit("turnon2");
+	}
+
+	public void TurnOff(){
+		socket.Emit("turnoff2");
+	}
+
+	public void GetData(){
+		socket.Emit("getdata2");
 	}
 
 	public void TestOpen(SocketIOEvent e)
 	{
 		Debug.Log("[SocketIO] Open received: " + e.name + " " + e.data);
 	}
-	
 	
 	public void TestError(SocketIOEvent e)
 	{
