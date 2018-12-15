@@ -4842,7 +4842,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Pressure: 30`C'
+  m_Text: 
 --- !u!222 &640086781
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5376,7 +5376,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Temperatur: 30`C'
+  m_Text: 
 --- !u!222 &728445258
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6031,7 +6031,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Humidity: 50'
+  m_Text: 
 --- !u!222 &788859210
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -18413,7 +18413,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Online
+  m_Text: 
 --- !u!222 &1980444586
 CanvasRenderer:
   m_ObjectHideFlags: 0
