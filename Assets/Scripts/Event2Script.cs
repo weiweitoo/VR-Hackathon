@@ -2,19 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 [System.Serializable]
-public class Event2Script : MonoBehaviour, Event {
+public class Event2Script : MonoBehaviour,Event {
 
-	// Use this for initialization
+	SocketEventInterface socketEvent;
+
 	void Start () {
-		
+		socketEvent = transform.GetComponent<SocketEventInterface>();
 	}
 	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 	public void run(){
 		Debug.Log("Event Script 2");
+		socketEvent.action();
 	}
-
 }

@@ -4,17 +4,14 @@ using UnityEngine;
 [System.Serializable]
 public class Event1Script : MonoBehaviour,Event {
 
-	// Use this for initialization
+	SocketEventInterface socketEvent;
+
 	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+		socketEvent = transform.GetComponent<SocketEventInterface>();
 	}
 
 	public void run(){
 		Debug.Log("Event Script 1");
+		socketEvent.action();
 	}
 }
