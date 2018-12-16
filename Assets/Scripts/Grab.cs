@@ -12,9 +12,12 @@ public class Grab : MonoBehaviour {
     GameObject holdObject;
     SocketEventInterface socketEvent;
     UIEventInterface uiEvent;
-	
-	// Update is called once per frame
-	void Update () {
+
+    public GameObject hide;
+    public GameObject show;
+
+    // Update is called once per frame
+    void Update () {
         // if (hold)
         //     Throw();
         // else
@@ -27,7 +30,9 @@ public class Grab : MonoBehaviour {
                 Debug.Log(hit.collider.gameObject.name);
                 if (hit.collider.gameObject.name == "Machine1"){
                     // TODO play sound
-                    SceneManager.LoadScene("GraphViewer");
+                    // SceneManager.LoadScene("GraphViewer");
+                    show.SetActive(true);
+                    hide.SetActive(false);
                 }
             }
         }
