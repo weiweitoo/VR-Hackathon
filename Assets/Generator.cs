@@ -8,11 +8,13 @@ public class Generator : MonoBehaviour {
 	public float minSize = 1.0f;
 	public float spreadRange = 80.0f;
 	public float spreadCheck = 100.0f;
+    public GameObject parent;
 
 	// Use this for initialization
 	void Start () {
 		List<GameObject> oList = new List<GameObject>();
 		List<string> prbList = new List<string>();
+    
 
 		prbList.Add("Overheat");				//1
 		prbList.Add("Inner Overheat");			//2
@@ -55,7 +57,8 @@ public class Generator : MonoBehaviour {
 
 				//Add Sphere to scenario
 				GameObject o = Object.Instantiate(prefab, new Vector3(xx,yy,zz), Quaternion.identity);
-				o.GetComponent<FloatingTextScript>().text = pbs + "\n" + System.Math.Round((randomScale - minSize)/(maxSize - minSize)*100) + "%";
+                o.transform.parent = parent.transform;
+                o.GetComponent<FloatingTextScript>().text = pbs + "\n" + System.Math.Round((randomScale - minSize)/(maxSize - minSize)*100) + "%";
 				o.GetComponent<RectTransform>().localScale = new Vector3(randomScale,randomScale,randomScale);
         		o.GetComponent<Renderer>().material.SetColor("_Color", clr);
 				oList.Add(o);
