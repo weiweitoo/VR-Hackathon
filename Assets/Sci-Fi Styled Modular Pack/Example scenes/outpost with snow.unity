@@ -1044,11 +1044,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4859486079138724, guid: 372b198cf9ed7b14089cb104eda7955e, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -36.731
+      value: 1.82
       objectReference: {fileID: 0}
     - target: {fileID: 4859486079138724, guid: 372b198cf9ed7b14089cb104eda7955e, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.45
       objectReference: {fileID: 0}
     - target: {fileID: 4859486079138724, guid: 372b198cf9ed7b14089cb104eda7955e, type: 2}
       propertyPath: m_LocalPosition.z
@@ -5989,7 +5989,7 @@ MonoBehaviour:
   runSpeed: 14
   gravity: 9.8
   lookSpeed: 45
-  flySpeed: 4
+  flySpeed: 2
   invertY: 1
   cameraPivot: {fileID: 839459767}
 --- !u!143 &770019118
@@ -7314,6 +7314,10 @@ Prefab:
         type: 2}
       propertyPath: alwaysEnable
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1201001048700122, guid: 372b198cf9ed7b14089cb104eda7955e, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 54979197157242660, guid: 372b198cf9ed7b14089cb104eda7955e, type: 2}

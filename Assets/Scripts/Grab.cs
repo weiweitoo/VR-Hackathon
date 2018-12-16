@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using CLOVR_Plugin;
+using UnityEngine.SceneManagement;
 
 [System.Serializable]
 public class Grab : MonoBehaviour {
@@ -19,6 +20,17 @@ public class Grab : MonoBehaviour {
         // else
         //     Pick();
         TurnOnMachine();
+
+        if (Input.GetButtonDown("Fire2")){
+            var hit = CLOVRRaycast.Cast(new Vector2(Screen.width / 2.0f, Screen.height / 2.0f));
+            if (hit.collider != null){
+                Debug.Log(hit.collider.gameObject.name);
+                if (hit.collider.gameObject.name == "Machine1"){
+                    // TODO play sound
+                    SceneManager.LoadScene("GraphViewer");
+                }
+            }
+        }
 
     }
 
