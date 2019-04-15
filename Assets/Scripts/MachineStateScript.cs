@@ -12,7 +12,7 @@ public class MachineStateScript : MonoBehaviour {
 	public float pressure;
 
 	public int updateRate = 3;
-	public string url = "http://172.30.93.138:4567/getdata";
+	public string url = "http://172.30.93.138:4567/state";
 
 	SocketEventInterface socketComponent;
 	Text textComponent;
@@ -37,8 +37,8 @@ public class MachineStateScript : MonoBehaviour {
 			    {
 			        // Show results as text
 			        var response = www.downloadHandler.text;
-			        MachineData machineData = MachineData.CreateFromJSON(response);
-			 		Debug.Log(response);       
+			        StateData machineData = StateData.CreateFromJSON(response);
+			 		// Debug.Log(response);       
 			        // Or retrieve results as binary data
 			        // byte[] results = www.downloadHandler.data;
 
@@ -49,25 +49,25 @@ public class MachineStateScript : MonoBehaviour {
 			        	// Assign Data
 			        	textComponent.text = "Online";
 		        		textComponent = wrapper.Find("Temperature").Find("Face 1").Find("Text").GetComponent<Text>();
-		        		textComponent.text = "Temperature: " + machineData.temp + "`C";
-		        		textComponent = wrapper.Find("Pressure").Find("Face 1").Find("Text").GetComponent<Text>();
-		        		textComponent.text = "Pressure: " + machineData.atm + " hPa";
+		        		textComponent.text = "Temperature: " + machineData.temperature + "`C";
+		        		// textComponent = wrapper.Find("Pressure").Find("Face 1").Find("Text").GetComponent<Text>();
+		        		// textComponent.text = "Pressure: " + machineData.atm + " hPa";
 		        		textComponent = wrapper.Find("Humidity").Find("Face 1").Find("Text").GetComponent<Text>();
-		        		textComponent.text = "Humidity: " + machineData.humility + " w";
-		        		textComponent = wrapper.Find("Distance").Find("Face 1").Find("Text").GetComponent<Text>();
-		        		textComponent.text = "Distance: " + machineData.distance + " cm";
-		        		textComponent = wrapper.Find("Energy").Find("Face 1").Find("Text").GetComponent<Text>();
-		        		textComponent.text = "Produce Enegry: " + machineData.magic + " kW/h";
+		        		textComponent.text = "Humidity: " + machineData.humidity + " w";
+		        		// textComponent = wrapper.Find("Distance").Find("Face 1").Find("Text").GetComponent<Text>();
+		        		// textComponent.text = "Distance: " + machineData.distance + " cm";
+		        		// textComponent = wrapper.Find("Energy").Find("Face 1").Find("Text").GetComponent<Text>();
+		        		// textComponent.text = "Produce Enegry: " + machineData.magic + " kW/h";
 			        }
-			        else if(machineData.ping == true){
-			        	textComponent.text = "Online";
-			        }
+			        // else if(machineData.ping == true){
+			        // 	textComponent.text = "Online";
+			        // }
 			        else{
 			        	Debug.Log("Dead");
 			        	textComponent.text = "Device Offline";
 			        	// Show notification
-			        	var notificationManager = GameObject.Find("NotificationManager").GetComponent<NotificationManager>();
-			        	notificationManager.ShowNotication();
+			        	// var notificationManager = GameObject.Find("NotificationManager").GetComponent<NotificationManager>();
+			        	// notificationManager.ShowNotication();
 			        }
 			    }
 			}
