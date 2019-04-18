@@ -1,32 +1,82 @@
-﻿using System.Collections;
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
+
+public class PiTime
+{
+    public int time;
+}
+
+public class PiID
+{
+    public string id;
+}
+
+public class PiData
+{
+    public PiID id;
+    public int data;
+    public PiTime date;
+}
 
 public class ParticleGraph : MonoBehaviour {
 
     ParticleSystem.Particle[] cloud;
     bool bPointsUpdated = false;
 
-    [Range(10, 100)]
-    public int resolution = 10;
+    public string jsonFile;
+    public string key;
+    [Header("Transform the data")]
+    public float dataTransform;
+    [Header("Zoom the data")]
+    public float zoom;
+    [Header("Zoom the time")]
+    public float timeZoom;
+    [Header("Graph Z-value")]
+    public float depth;
 
-    Vector3[] points;
-    Color[] colors;
+    private JObject json;
+    private Vector3[] points;
+    private Color[] colors;
 
-    void Awake()
+    private const float ATMPressure = 101325;
+
+    private void Start()
     {
-        float step = 2f / resolution;
-        float xx;
-        points = new Vector3[resolution];
-        colors = new Color[resolution];
+        //Get json code here
+        //Change to HTML request mode
+        string path = Application.dataPath + jsonFile;
+        string jsonString = File.ReadAllText(path);
+        json = (JObject)JsonConvert.DeserializeObject(jsonString);
+        //Plot points
+        JArray dataArray = json[key].Value<JArray>();
+        int count = dataArray.Count;
+        points = new Vector3[count];
+        colors = new Color[count];
+        long lastTime = 0;
+        float pos = 0;
+        //Debug.Log(dataArray[0]["time"]["$date"]);
         for (int i = 0; i < points.Length; i++)
         {
-            xx= (i + 0.5f) * step - 1f;
-            points[i] = Vector3.right * xx;
+            long currentTime = dataArray[i]["time"]["$date"].Value<long>();
+            if (lastTime != 0)
+            {
+                pos += (float)(currentTime - lastTime) * timeZoom;
+            }
+            float val = (dataArray[i][key].Value<float>() - dataTransform) * zoom;
+            points[i] = new Vector3(pos, val, depth);
             colors[i] = Color.red;
+            lastTime = currentTime;
         }
+        SetPoints(points, colors);
+        GetComponent<ParticleSystem>().SetParticles(cloud, cloud.Length);
     }
+    
 
+    /*
     void Update()
     {
         for (int i = 0; i < points.Length; i++)
@@ -42,6 +92,7 @@ public class ParticleGraph : MonoBehaviour {
             bPointsUpdated = false;
         }
     }
+    */
 
     public void SetPoints(Vector3[] positions, Color[] colors)
     {

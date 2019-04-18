@@ -1,0 +1,462 @@
+{
+  "pressure": [
+    {
+      "pressure": 100652,
+      "_id": {
+        "$oid": "5cb73d23ad889d42e06194d6"
+      },
+      "time": {
+        "$date": 1555541411104
+      }
+    },
+    {
+      "pressure": 100657,
+      "_id": {
+        "$oid": "5cb73dbfad889d430af8ab1e"
+      },
+      "time": {
+        "$date": 1555541567194
+      }
+    },
+    {
+      "pressure": 100652,
+      "_id": {
+        "$oid": "5cb73e8ead889d4347a30b95"
+      },
+      "time": {
+        "$date": 1555541774498
+      }
+    },
+    {
+      "pressure": 100655,
+      "_id": {
+        "$oid": "5cb73e92ad889d4347a30b9d"
+      },
+      "time": {
+        "$date": 1555541778161
+      }
+    },
+    {
+      "pressure": 100652,
+      "_id": {
+        "$oid": "5cb73e95ad889d4347a30ba5"
+      },
+      "time": {
+        "$date": 1555541781831
+      }
+    },
+    {
+      "pressure": 100657,
+      "_id": {
+        "$oid": "5cb73e99ad889d4347a30bad"
+      },
+      "time": {
+        "$date": 1555541785502
+      }
+    },
+    {
+      "pressure": 100656,
+      "_id": {
+        "$oid": "5cb73e9dad889d4347a30bb5"
+      },
+      "time": {
+        "$date": 1555541789172
+      }
+    },
+    {
+      "pressure": 100661,
+      "_id": {
+        "$oid": "5cb74025ad889d4498efa6da"
+      },
+      "time": {
+        "$date": 1555542181107
+      }
+    },
+    {
+      "pressure": 100653,
+      "_id": {
+        "$oid": "5cb74028ad889d4498efa6e2"
+      },
+      "time": {
+        "$date": 1555542184865
+      }
+    },
+    {
+      "pressure": 100662,
+      "_id": {
+        "$oid": "5cb7402cad889d4498efa6ea"
+      },
+      "time": {
+        "$date": 1555542188607
+      }
+    }
+  ],
+  "altitude": [
+    {
+      "altitude": 55.846825199465684,
+      "_id": {
+        "$oid": "5cb73d23ad889d42e06194d7"
+      },
+      "time": {
+        "$date": 1555541411236
+      }
+    },
+    {
+      "altitude": 56.26534558192937,
+      "_id": {
+        "$oid": "5cb73dbfad889d430af8ab1f"
+      },
+      "time": {
+        "$date": 1555541567199
+      }
+    },
+    {
+      "altitude": 56.51646589194159,
+      "_id": {
+        "$oid": "5cb73e8ead889d4347a30b96"
+      },
+      "time": {
+        "$date": 1555541774500
+      }
+    },
+    {
+      "altitude": 56.26534558192937,
+      "_id": {
+        "$oid": "5cb73e92ad889d4347a30b9e"
+      },
+      "time": {
+        "$date": 1555541778165
+      }
+    },
+    {
+      "altitude": 55.93052792925886,
+      "_id": {
+        "$oid": "5cb73e95ad889d4347a30ba6"
+      },
+      "time": {
+        "$date": 1555541781835
+      }
+    },
+    {
+      "altitude": 55.76312314299916,
+      "_id": {
+        "$oid": "5cb73e99ad889d4347a30bae"
+      },
+      "time": {
+        "$date": 1555541785507
+      }
+    },
+    {
+      "altitude": 55.846825199465684,
+      "_id": {
+        "$oid": "5cb73e9dad889d4347a30bb6"
+      },
+      "time": {
+        "$date": 1555541789176
+      }
+    },
+    {
+      "altitude": 56.51646589194159,
+      "_id": {
+        "$oid": "5cb74025ad889d4498efa6db"
+      },
+      "time": {
+        "$date": 1555542181111
+      }
+    },
+    {
+      "altitude": 55.93052792925886,
+      "_id": {
+        "$oid": "5cb74028ad889d4498efa6e3"
+      },
+      "time": {
+        "$date": 1555542184869
+      }
+    },
+    {
+      "altitude": 55.846825199465684,
+      "_id": {
+        "$oid": "5cb7402cad889d4498efa6eb"
+      },
+      "time": {
+        "$date": 1555542188611
+      }
+    }
+  ],
+  "sealevel": [
+    {
+      "sealevel_pressure": 100654.0,
+      "_id": {
+        "$oid": "5cb73d23ad889d42e06194d8"
+      },
+      "time": {
+        "$date": 1555541411394
+      }
+    },
+    {
+      "sealevel_pressure": 100648.0,
+      "_id": {
+        "$oid": "5cb73dbfad889d430af8ab20"
+      },
+      "time": {
+        "$date": 1555541567204
+      }
+    },
+    {
+      "sealevel_pressure": 100659.0,
+      "_id": {
+        "$oid": "5cb73e8ead889d4347a30b97"
+      },
+      "time": {
+        "$date": 1555541774503
+      }
+    },
+    {
+      "sealevel_pressure": 100651.0,
+      "_id": {
+        "$oid": "5cb73e92ad889d4347a30b9f"
+      },
+      "time": {
+        "$date": 1555541778170
+      }
+    },
+    {
+      "sealevel_pressure": 100653.0,
+      "_id": {
+        "$oid": "5cb73e95ad889d4347a30ba7"
+      },
+      "time": {
+        "$date": 1555541781840
+      }
+    },
+    {
+      "sealevel_pressure": 100655.0,
+      "_id": {
+        "$oid": "5cb73e99ad889d4347a30baf"
+      },
+      "time": {
+        "$date": 1555541785511
+      }
+    },
+    {
+      "sealevel_pressure": 100660.0,
+      "_id": {
+        "$oid": "5cb73e9dad889d4347a30bb7"
+      },
+      "time": {
+        "$date": 1555541789181
+      }
+    },
+    {
+      "sealevel_pressure": 100644.0,
+      "_id": {
+        "$oid": "5cb74025ad889d4498efa6dc"
+      },
+      "time": {
+        "$date": 1555542181116
+      }
+    },
+    {
+      "sealevel_pressure": 100651.0,
+      "_id": {
+        "$oid": "5cb74028ad889d4498efa6e4"
+      },
+      "time": {
+        "$date": 1555542184874
+      }
+    },
+    {
+      "sealevel_pressure": 100651.0,
+      "_id": {
+        "$oid": "5cb7402cad889d4498efa6ec"
+      },
+      "time": {
+        "$date": 1555542188615
+      }
+    }
+  ],
+  "temperature": [
+    {
+      "_id": {
+        "$oid": "5cb73d22ad889d42e06194d4"
+      },
+      "temperature": 25.0,
+      "time": {
+        "$date": 1555541410770
+      }
+    },
+    {
+      "_id": {
+        "$oid": "5cb73dbfad889d430af8ab1c"
+      },
+      "temperature": 24.0,
+      "time": {
+        "$date": 1555541567168
+      }
+    },
+    {
+      "_id": {
+        "$oid": "5cb73e8ead889d4347a30b93"
+      },
+      "temperature": 23.0,
+      "time": {
+        "$date": 1555541774491
+      }
+    },
+    {
+      "_id": {
+        "$oid": "5cb73e92ad889d4347a30b9b"
+      },
+      "temperature": 24.0,
+      "time": {
+        "$date": 1555541778151
+      }
+    },
+    {
+      "_id": {
+        "$oid": "5cb73e95ad889d4347a30ba3"
+      },
+      "temperature": 26.0,
+      "time": {
+        "$date": 1555541781820
+      }
+    },
+    {
+      "_id": {
+        "$oid": "5cb73e99ad889d4347a30bab"
+      },
+      "temperature": 22.0,
+      "time": {
+        "$date": 1555541785492
+      }
+    },
+    {
+      "_id": {
+        "$oid": "5cb73e9dad889d4347a30bb3"
+      },
+      "temperature": 23.0,
+      "time": {
+        "$date": 1555541789161
+      }
+    },
+    {
+      "_id": {
+        "$oid": "5cb74025ad889d4498efa6d8"
+      },
+      "temperature": 25.0,
+      "time": {
+        "$date": 1555542181098
+      }
+    },
+    {
+      "_id": {
+        "$oid": "5cb74028ad889d4498efa6e0"
+      },
+      "temperature": 26.0,
+      "time": {
+        "$date": 1555542184847
+      }
+    },
+    {
+      "_id": {
+        "$oid": "5cb7402cad889d4498efa6e8"
+      },
+      "temperature": 27.0,
+      "time": {
+        "$date": 1555542188513
+      }
+    }
+  ],
+  "humidity": [
+    {
+      "humidity": 84.0,
+      "_id": {
+        "$oid": "5cb73d22ad889d42e06194d5"
+      },
+      "time": {
+        "$date": 1555541410988
+      }
+    },
+    {
+      "humidity": 85.0,
+      "_id": {
+        "$oid": "5cb73dbfad889d430af8ab1d"
+      },
+      "time": {
+        "$date": 1555541567189
+      }
+    },
+    {
+      "humidity": 84.0,
+      "_id": {
+        "$oid": "5cb73e8ead889d4347a30b94"
+      },
+      "time": {
+        "$date": 1555541774495
+      }
+    },
+    {
+      "humidity": 84.0,
+      "_id": {
+        "$oid": "5cb73e92ad889d4347a30b9c"
+      },
+      "time": {
+        "$date": 1555541778156
+      }
+    },
+    {
+      "humidity": 86.0,
+      "_id": {
+        "$oid": "5cb73e95ad889d4347a30ba4"
+      },
+      "time": {
+        "$date": 1555541781826
+      }
+    },
+    {
+      "humidity": 87.0,
+      "_id": {
+        "$oid": "5cb73e99ad889d4347a30bac"
+      },
+      "time": {
+        "$date": 1555541785497
+      }
+    },
+    {
+      "humidity": 88.0,
+      "_id": {
+        "$oid": "5cb73e9dad889d4347a30bb4"
+      },
+      "time": {
+        "$date": 1555541789167
+      }
+    },
+    {
+      "humidity": 84.0,
+      "_id": {
+        "$oid": "5cb74025ad889d4498efa6d9"
+      },
+      "time": {
+        "$date": 1555542181103
+      }
+    },
+    {
+      "humidity": 82.0,
+      "_id": {
+        "$oid": "5cb74028ad889d4498efa6e1"
+      },
+      "time": {
+        "$date": 1555542184861
+      }
+    },
+    {
+      "humidity": 81.0,
+      "_id": {
+        "$oid": "5cb7402cad889d4498efa6e9"
+      },
+      "time": {
+        "$date": 1555542188602
+      }
+    }
+  ]
+}
