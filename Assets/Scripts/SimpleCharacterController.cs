@@ -68,7 +68,7 @@ public class SimpleCharacterController : MonoBehaviour {
         else if(down){
             y = -flySpeed;
         }
-        Debug.Log(y);
+        // Debug.Log(y);
         var translation = new Vector3(x, y, z);
         speed = run ? runSpeed : walkSpeed;
         movement = cameraPivot.transform.TransformDirection(translation * speed);

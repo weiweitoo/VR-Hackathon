@@ -4,9 +4,12 @@ using UnityEngine;
 [System.Serializable]
 public class StateData {
 
-    public string detection;
+    public float altitude;
     public float temperature;
     public float humidity;
+    public float sealevel;
+    public float pressure;
+    public string detection;
 
     public static StateData CreateFromJSON(string jsonString)
     {

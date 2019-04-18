@@ -20,8 +20,8 @@ public class Machine1SocketScript : MonoBehaviour,SocketEventInterface {
 	}
 
 	public void TurnOn(){
-		Debug.Log("on_g");
-		socket.Emit("on_g");
+		Debug.Log("toggle_bz");
+		socket.Emit("toggle_bz");
 	}
 
 	 public void TestData(SocketIOEvent e){

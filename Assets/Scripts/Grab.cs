@@ -24,18 +24,18 @@ public class Grab : MonoBehaviour {
         //     Pick();
         TurnOnMachine();
 
-        if (Input.GetButtonDown("Fire2")){
-            var hit = CLOVRRaycast.Cast(new Vector2(Screen.width / 2.0f, Screen.height / 2.0f));
-            if (hit.collider != null){
-                Debug.Log(hit.collider.gameObject.name);
-                if (hit.collider.gameObject.name == "Machine1"){
-                    // TODO play sound
-                    // SceneManager.LoadScene("GraphViewer");
-                    show.SetActive(true);
-                    hide.SetActive(false);
-                }
-            }
-        }
+        // if (Input.GetButtonDown("Fire2")){
+        //     var hit = CLOVRRaycast.Cast(new Vector2(Screen.width / 2.0f, Screen.height / 2.0f));
+        //     if (hit.collider != null){
+        //         Debug.Log(hit.collider.gameObject.name);
+        //         if (hit.collider.gameObject.name == "Machine1"){
+        //             // TODO play sound
+        //             // SceneManager.LoadScene("GraphViewer");
+        //             show.SetActive(true);
+        //             hide.SetActive(false);
+        //         }
+        //     }
+        // }
 
     }
 
