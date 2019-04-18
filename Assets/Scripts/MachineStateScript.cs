@@ -38,7 +38,7 @@ public class MachineStateScript : MonoBehaviour {
 			        // Show results as text
 			        var response = www.downloadHandler.text;
 			        StateData machineData = StateData.CreateFromJSON(response);
-			 		Debug.Log(response);       
+			 		// Debug.Log(response);       
 			        // Or retrieve results as binary data
 			        // byte[] results = www.downloadHandler.data;
 
